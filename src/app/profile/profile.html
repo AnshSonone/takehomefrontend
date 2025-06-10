@@ -1,0 +1,19 @@
+<div class="p-6 bg-gray-100 min-h-screen">
+    <div class="bg-white shadow-md rounded p-6 max-w-3xl mx-auto">
+      <h1 class="text-2xl font-bold mb-4">👤 Profile</h1>
+
+      <div class="mb-6">
+        <p class="text-black"><strong>Name:</strong>{{ profile()?.username }}</p>
+        <p class="text-black"><strong>Email:</strong> {{ profile()?.email }}</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold mb-2">📚 Enrolled Courses</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li *ngFor="let course of profile()?.enrolledCourses">
+            {{ course }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

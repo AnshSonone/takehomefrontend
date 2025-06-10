@@ -1,0 +1,41 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium">Username</label>
+        <input type="text" formControlName="username" class="w-full border p-2 rounded" />
+        <p class="text-red-500 text-sm" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+          Username is required.
+        </p>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Email</label>
+        <input type="email" formControlName="email" class="w-full border p-2 rounded" />
+        <p class="text-red-500 text-sm" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+          Valid email is required.
+        </p>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Password</label>
+        <input type="password" formControlName="password" class="w-full border p-2 rounded" />
+        <p class="text-red-500 text-sm" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+          Password is required.
+        </p>
+      </div>
+
+      <button type="submit" [disabled]="signupForm.invalid"
+        class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+        Create Account
+      </button>
+    </form>
+    <div class="text-center mt-4">
+      <p class="text-sm text-gray-600">
+        Don’t have an account?
+        <a routerLink="/login" class="text-blue-500 hover:underline">Sign in</a>
+      </p>
+    </div>
+  </div>
+</div>

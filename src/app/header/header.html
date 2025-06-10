@@ -1,0 +1,37 @@
+<!-- header.component.html -->
+<nav class="bg-gray-800 text-white px-8 py-3">
+    <div class="container mx-auto flex items-center justify-between">
+      <a routerLink="/" class="text-xl font-bold">Courser</a>
+  
+      <button
+        class="block lg:hidden"
+        (click)="toggleMenu()"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16">
+          </path>
+        </svg>
+      </button>
+  
+      <ul class="hidden lg:flex space-x-6">
+        <li><a routerLink="/" class="cursor-pointer font-semibold  p-2 rounded-lg hover:bg-gradient-to-t to-pink-700 from-violet-700 duration-200 ease-linear transition-all delay-100 hover:scale-110"  routerLinkActive="text-yellow-400">Dashboard</a></li>
+        <li><a routerLink="/profile" class="cursor-pointer font-semibold  p-2 rounded-lg hover:bg-gradient-to-t to-pink-700 from-violet-700 duration-200 ease-linear transition-all delay-100 hover:scale-110" routerLinkActive="text-yellow-400">Profile</a></li>
+        <li><a routerLink="/login" class="cursor-pointer font-semibold  p-2 rounded-lg hover:bg-gradient-to-t to-pink-700 from-violet-700 duration-200 ease-linear transition-all delay-100 hover:scale-110" routerLinkActive="text-yellow-400">Login</a></li>
+      </ul>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div *ngIf="menuOpen" class="lg:hidden px-8 pt-2 pb-4 space-y-2">
+      <a routerLink="/" class="block">Dashboard</a>
+      <a routerLink="/profile" class="block">Profile</a>
+      <a routerLink="/login" class="block">Login</a>
+    </div>
+  </nav>
+  

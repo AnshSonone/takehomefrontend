@@ -6,8 +6,55 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable common dev tool shortcuts
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === 'U')
+      ) {
+        e.preventDefault();
+      }
+    });
+  </script>
+
+  <style>
+    /* Hide content if JS is disabled */
+    .no-js #app-root {
+      display: none;
+    }
+  </style>
 </head>
-<body>
+<body class="no-js">
+  <noscript>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8fafc;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+    </style>
+    <div>
+      <h1>JavaScript Required</h1>
+      <p>This website requires JavaScript to function. Please enable JavaScript in your browser settings and reload the page.</p>
+    </div>
+  </noscript>
+
   <app-root></app-root>
+
+  <script>
+    // Remove 'no-js' class if JavaScript is enabled
+    document.body.classList.remove('no-js');
+  </script>
 </body>
 </html>
