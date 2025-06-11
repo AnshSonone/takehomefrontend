@@ -8,10 +8,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <script>
-    // Disable right-click
+    
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Disable common dev tool shortcuts
+    
     document.addEventListener('keydown', function (e) {
       if (
         e.key === 'F12' ||
@@ -24,7 +24,7 @@
   </script>
 
   <style>
-    /* Hide content if JS is disabled */
+
     .no-js #app-root {
       display: none;
     }
@@ -53,7 +53,7 @@
   <app-root></app-root>
 
   <script>
-    // Remove 'no-js' class if JavaScript is enabled
+  
     document.body.classList.remove('no-js');
   </script>
 </body>

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { environment as environmentProd } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
 
-      this.http.post(`https://takehomebackend.onrender.com/api/login`, loginData).subscribe({
+      this.http.post(`${environmentProd.apiUrl}/api/login`, loginData).subscribe({
         next: (res: any) => {
           this.successMessage = res.message;
           this.errorMessage = '';

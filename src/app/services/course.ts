@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { environment as environmentProd } from '../../environments/environment.prod';
 
 export interface Course {
   id: number;
@@ -16,7 +17,7 @@ export interface Course {
 export class CourseService {
   http = inject(HttpClient)
   getCourses() {
-    const API_URL = `https://takehomebackend.onrender.com/api/courses`;
+    const API_URL = `${environmentProd.apiUrl}/api/courses`;
      return this.http.get<{courses: Course[]}>(API_URL)
   }
   

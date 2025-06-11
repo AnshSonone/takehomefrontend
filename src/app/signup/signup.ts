@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { environment as environmentProd } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-signup',
@@ -28,7 +29,7 @@ export class SignupComponent {
 
       console.log('Sending to backend:', signupData); 
 
-      this.http.post(`https://takehomebackend.onrender.com/register`, signupData, {
+      this.http.post(`${environmentProd.apiUrl}/register`, signupData, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       }).subscribe({
         next: (res) => {
