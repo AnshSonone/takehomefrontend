@@ -28,7 +28,7 @@ export class SignupComponent {
 
       console.log('Sending to backend:', signupData); 
 
-      this.http.post(`${environment.apiUrl}/register`, signupData, {
+      this.http.post(`https://takehomebackend.onrender.com/register`, signupData, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       }).subscribe({
         next: (res) => {

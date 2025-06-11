@@ -16,12 +16,12 @@ import { HttpClient } from '@angular/common/http';
 export class ProfileService {
   http = inject(HttpClient)
   getProfile() {
-    const API_URL = 'http://localhost:8000/api/user';
+    const API_URL = 'https://takehomebackend.onrender.com/api/user';
      return this.http.get<{user: Profile}>(API_URL)
   }
 
   getCourseById(courseId: Number) {
-    const API_URL = `http://localhost:8000/api/courses/${courseId}`;
+    const API_URL = `https://takehomebackend.onrender.com/api/courses/${courseId}`;
     return this.http.get<{ course: any }>(API_URL);
   }  
 

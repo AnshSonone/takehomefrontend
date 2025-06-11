@@ -35,7 +35,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
 
-      this.http.post(`${environment.apiUrl}/api/login`, loginData).subscribe({
+      this.http.post(`https://takehomebackend.onrender.com/api/login`, loginData).subscribe({
         next: (res: any) => {
           this.successMessage = res.message;
           this.errorMessage = '';

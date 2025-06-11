@@ -16,7 +16,7 @@ export interface Course {
 export class CourseService {
   http = inject(HttpClient)
   getCourses() {
-    const API_URL = `${environment.apiUrl}/api/courses`;
+    const API_URL = `https://takehomebackend.onrender.com/api/courses`;
      return this.http.get<{courses: Course[]}>(API_URL)
   }
   
